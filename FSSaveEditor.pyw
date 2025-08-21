@@ -20,14 +20,14 @@ try:
 except ImportError:
     messagebox.showerror("Error: Sun-Valley-ttk-theme missing", f"Attempting to automatically install required module: sv-ttk")
     import sys
-    os.system(sys.executable + " -m pip install sv-ttk")
+    os.system(f'"{sys.executable}" -m pip install sv-ttk')
     import sv_ttk
 try:
     import darkdetect
 except ImportError:
     messagebox.showerror("Error: Darkdetect missing", f"Attempting to automatically install required module: darkdetect")
     import sys
-    os.system(sys.executable + " -m pip install darkdetect")
+    os.system(f'"{sys.executable}" -m pip install darkdetect')
     import darkdetect
 
 with open("config.json", "r") as f:
@@ -51,7 +51,7 @@ class SaveEditor:
             except ImportError:
                 messagebox.showerror("Error: PIL missing", f"Attempting to automatically install required module: PIL")
                 import sys
-                os.system(sys.executable + " -m pip install PIL")
+                os.system(f'"{sys.executable}" -m pip install PIL')
                 from PIL import Image, ImageTk
             ico = Image.open('favicon.ico')
             icon = ImageTk.PhotoImage(ico)
